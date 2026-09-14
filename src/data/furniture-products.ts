@@ -1,0 +1,648 @@
+// Auto-generated from scripts/_furniture_data.py — do not hand-edit product entries below,
+// regenerate the script instead if source data changes.
+import type { CatalogGroup } from "@/data/catalog-types";
+
+export const furnitureGroups: CatalogGroup[] = [
+  {
+    title: "ICU & Hospital Beds",
+    products: [
+      {
+        code: "CHC-1010",
+        name: "Five Function Electric ICU Bed",
+        specs: "4-motor system, ACP & patient handset, CPR quick fold, UPS backup. Height 535–890mm",
+        image: "/furniture/sc-1010.png",
+      },
+      {
+        code: "CHC-1011",
+        name: "Three Function Electric ICU Bed",
+        specs: "3-motor electric system, perforated CRCA sheet top, collapsible side railings. Height 560–760mm",
+        image: "/furniture/sc-1011.png",
+      },
+      {
+        code: "CHC-1020",
+        name: "Four Function Manual ICU Bed",
+        specs: "Backrest, knee rest, trendelenburg & reverse trendelenburg by screw. Height 570–860mm",
+        image: "/furniture/sc-1020.png",
+      },
+      {
+        code: "CHC-1021",
+        name: "Three Function Manual ICU Bed",
+        specs: "Three-function screw-operated bed, ABS moulded head/foot boards. Height 560–760mm",
+        image: "/furniture/sc-1021.png",
+      },
+      {
+        code: "CHC-2010",
+        name: "Fowler Bed Standard",
+        specs: "CRCA steel, two lead screw fowler positions. 2070×940×580mm",
+        image: "/furniture/sc-2010.png",
+      },
+      {
+        code: "CHC-2010 DX",
+        name: "Fowler Bed Deluxe",
+        specs: "ABS/Polymer head & foot board, collapsible side railings. 2200×660×610mm",
+        image: "/furniture/sc-2010-dx.png",
+      },
+      {
+        code: "CHC-2011",
+        name: "Semi Fowler Bed Standard",
+        specs: "CRCA steel, backrest adjustable on lead screw. 1890×880×570mm",
+        image: "/furniture/sc-2011.png",
+      },
+      {
+        code: "CHC-2011 DX",
+        name: "Semi Fowler Bed Deluxe",
+        specs: "ABS/Polymer head & foot board, new design collapsible side railings. 2090×960×610mm",
+        image: "/furniture/sc-2011-dx.png",
+      },
+      {
+        code: "CHC-2013",
+        name: "Plain Hospital Bed",
+        specs: "CRCA steel, two I.V. rod locations. 1890×880×570mm",
+        image: "/furniture/sc-2013.png",
+      },
+      {
+        code: "CHC-2014",
+        name: "Standard Maternity Bed",
+        specs: "Baby cradle attachment, two I.V. rod locations. 1880×830×570mm",
+        image: "/furniture/sc-2014.png",
+      },
+      {
+        code: "CHC-2016",
+        name: "Backrest",
+        specs: "Electrically operated (28″×30″) with/without mattress",
+        image: "/furniture/sc-2016.jpg",
+      },
+      {
+        code: "CHC-2018",
+        name: "Paediatric Bed",
+        specs: "Compact CRCA steel, full length drop side railings. 1575×860×570mm",
+        image: "/furniture/sc-2018.png",
+      },
+      {
+        code: "CHC-2020",
+        name: "Attendant Bed Cum Chair",
+        specs: "Converts from bed to chair, CRCA steel with artificial leather & foam. 810–1900mm L",
+        image: "/furniture/sc-2020.png",
+      },
+      {
+        code: "CHC-2021",
+        name: "Standard Attendant Bed",
+        specs: "Compact CRCA steel attendant/relative bed. 1830×620×460mm",
+        image: "/furniture/sc-2021.png",
+      },
+      {
+        code: "CHC-2022",
+        name: "Bunk Bed",
+        specs: "Two or three tier CRCA steel with ladder. 1875×760×1650mm",
+        image: "/furniture/sc-2022.png",
+      },
+    ],
+  },
+  {
+    title: "Bedside Furniture & Storage",
+    products: [
+      {
+        code: "CHC-2030",
+        name: "Bed Side Locker (Deluxe)",
+        specs: "CRCA steel, drawer + cabinet + SS top, 50mm wheels. 450×450×860mm",
+        image: "/furniture/sc-2030.jpg",
+      },
+      {
+        code: "CHC-2031",
+        name: "Bedside Lockers (ABS)",
+        specs: "ABS/Polymer moulded, tray + drawer + cabinet. 450×410×740mm",
+        image: "/furniture/sc-2031.jpg",
+      },
+      {
+        code: "CHC-2032",
+        name: "Bed Side Locker (Standard)",
+        specs: "CRCA steel, cabinet + SS top. 400×350×760mm",
+        image: "/furniture/sc-2032.png",
+      },
+      {
+        code: "CHC-2033",
+        name: "Bedside Trolley / Table",
+        specs: "Complete stainless steel, 2 or 3 shelves. 460×330×860mm",
+        image: "/furniture/sc-2033.png",
+      },
+      {
+        code: "CHC-2095",
+        name: "Instrument Cabinet",
+        specs: "CRCA sheet, 4 lockable glass doors, 5 fixed shelves. 910×510×1980mm",
+        image: "/furniture/sc-2095.png",
+      },
+      {
+        code: "CHC-2096",
+        name: "Pigeon Locker",
+        specs: "CRCA sheet, 6/8/9/12/15/18 lockers as required. 910×450×1980mm",
+        image: "/furniture/sc-2096.png",
+      },
+      {
+        code: "CHC-2034",
+        name: "Bedside Drug Trolley",
+        specs: "Full SS, 3–4 shelves, 50mm diameter wheels. 580×360×660mm",
+        image: "/furniture/sc-2034.png",
+      },
+    ],
+  },
+  {
+    title: "Trolleys & Transport",
+    products: [
+      {
+        code: "CHC-2040",
+        name: "Crash Cart",
+        specs: "7-drawer modular, O2 cylinder stand, monitor tray. 760×380×1500mm",
+        image: "/furniture/sc-2040.png",
+      },
+      {
+        code: "CHC-2041",
+        name: "Emergency Drug Trolley",
+        specs: "25/30 medicine containers, file holder. 660×460×1470mm",
+        image: "/furniture/sc-2041.png",
+      },
+      {
+        code: "CHC-2042",
+        name: "Monitor Trolley",
+        specs: "SS or powder coated, 3–4 height-adjustable shelves. 660×560×1370mm",
+        image: "/furniture/sc-2042.png",
+      },
+      {
+        code: "CHC-2043",
+        name: "Monitor Stand (Wall Mounted)",
+        specs: "Wall-mounted SS monitor bracket, adjustable arm",
+        image: "/furniture/sc-2043.png",
+      },
+      {
+        code: "CHC-2044",
+        name: "ECG Machine Trolley",
+        specs: "SS, 3 trays, cable hanger both sides. 380×460×915mm",
+        image: "/furniture/sc-2044.png",
+      },
+      {
+        code: "CHC-2045",
+        name: "Syringe Pump Stand",
+        specs: "CRCA tubular, 4 adjustable trays. Height 1700mm",
+        image: "/furniture/sc-2045.png",
+      },
+      {
+        code: "CHC-2046",
+        name: "Instrument Trolley",
+        specs: "SS, 2 shelves, 3 side railings. 710×460×810mm",
+        image: "/furniture/sc-2046.png",
+      },
+      {
+        code: "CHC-2047",
+        name: "Dressing Trolley with Bowl-Bucket",
+        specs: "SS, bowl 320mm dia + bucket 210mm dia. 710×460×810mm",
+        image: "/furniture/sc-2047.png",
+      },
+      {
+        code: "CHC-2048",
+        name: "Mayo's Trolley",
+        specs: "SS frame + SS tray (410×560mm), height adjustable. 890–1400mm",
+        image: "/furniture/sc-2048.png",
+      },
+      {
+        code: "CHC-2049",
+        name: "Mayo's Trolley (Double Pillar)",
+        specs: "Double pillar SS frame, large tray 710×460mm. 890–1400mm",
+        image: "/furniture/sc-2049.png",
+      },
+      {
+        code: "CHC-2050",
+        name: "Cardiac ICU Trolley",
+        specs: "Height adjustable 970–1180mm, ABS/Polymer top. 965×430×970mm",
+        image: "/furniture/sc-2050.png",
+      },
+      {
+        code: "CHC-2052",
+        name: "Over Bed Table",
+        specs: "Full SS table with glass holder arrangement. 700×340×310mm",
+        image: "/furniture/sc-2052.png",
+      },
+      {
+        code: "CHC-2053",
+        name: "Oxygen Cylinder Trolley (Push Type)",
+        specs: "Epoxy powder coated, 100mm diameter wheels. 200×200×1170mm",
+        image: "/furniture/sc-2053.png",
+      },
+      {
+        code: "CHC-2055",
+        name: "Jumbo Oxygen Cylinder Trolley",
+        specs: "Epoxy coated, 200mm front wheels. 300×300×1525mm",
+        image: "/furniture/sc-2055.png",
+      },
+      {
+        code: "CHC-2058",
+        name: "Blood Collection Chair",
+        specs: "Blood-bag basket, telescopic IV, tilting movement. 1070×815×400mm",
+        image: "/furniture/sc-2058.jpg",
+      },
+      {
+        code: "CHC-2059",
+        name: "Hydraulic Emergency & Recovery Trolley",
+        specs: "Hydraulic height-adjustable, low-up SS railings. 1879.6mm L",
+        image: "/furniture/sc-2059.jpg",
+      },
+      {
+        code: "CHC-2060",
+        name: "Emergency Recovery Trolley",
+        specs: "Height + trendelenburg by screw & lever. 2130×610mm",
+        image: "/furniture/sc-2060.png",
+      },
+      {
+        code: "CHC-2061",
+        name: "Stretcher on Trolley",
+        specs: "Removable top, SS top or full SS. 2080×610×840mm",
+        image: "/furniture/sc-2061.png",
+      },
+      {
+        code: "CHC-2062",
+        name: "Stretcher Trolley – Folding",
+        specs: "Both-side folding top, CRCA frame. Folds to 1000×510mm",
+        image: "/furniture/sc-2062.png",
+      },
+      {
+        code: "CHC-2063",
+        name: "Folding Stretcher (Two Fold)",
+        specs: "SS tubular, 1700mm rexine cloth, two-fold easy carry. 2010×530mm",
+        image: "/furniture/sc-2063.png",
+      },
+      {
+        code: "CHC-2064",
+        name: "Canvas/Rexine Stretcher",
+        specs: "CRCA tubular, 1790mm cloth with lifting belts. 2040×610mm",
+        image: "/furniture/sc-2064.jpg",
+      },
+    ],
+  },
+  {
+    title: "Examination Tables & Couches",
+    products: [
+      {
+        code: "CHC-2069N",
+        name: "Examination Couch (NXL)",
+        specs: "Heavy-duty MS, 3 cabinets + 3 drawers. 1975×560×805mm",
+        image: "/furniture/sc-2069n.png",
+      },
+      {
+        code: "CHC-2069O",
+        name: "Examination Couch Regular",
+        specs: "CRCA square tubes, 4 cabinets + 4 drawers. 1830×610×810mm",
+        image: "/furniture/sc-2069o.jpg",
+      },
+      {
+        code: "CHC-2070N",
+        name: "Examination Couch NDL (Regular & Gynac)",
+        specs: "Heavy-duty MS, 2 cabinets + 2 drawers. 1975×560×805mm",
+        image: "/furniture/sc-2070n.jpg",
+      },
+      {
+        code: "CHC-2070O",
+        name: "Gynac Examination Couch",
+        specs: "CRCA square tubes, lithotomic bars with belts. 1830×610×810mm",
+        image: "/furniture/sc-2070o.jpg",
+      },
+      {
+        code: "CHC-2071N",
+        name: "Examination Couch (NSL)",
+        specs: "Heavy-duty MS, 1 cabinet + 1 drawer. 1975×560×805mm",
+        image: "/furniture/sc-2071n.jpg",
+      },
+      {
+        code: "CHC-2071O",
+        name: "Half Closed Examination Couch",
+        specs: "CRCA square tubes, 2 cabinets + 1 drawer. 1830×610×810mm",
+        image: "/furniture/sc-2071o.jpg",
+      },
+      {
+        code: "CHC-2073",
+        name: "Electrical Examination Table",
+        specs: "Motorized, CRCA frame, gynec lithotomy bars. 1830×688×790mm",
+        image: "/furniture/sc-2073.jpg",
+      },
+      {
+        code: "CHC-2074",
+        name: "Examination Table Simple",
+        specs: "CRCA tube frame, headrest on ratchet. 1830×610×810mm",
+        image: "/furniture/sc-2074.png",
+      },
+      {
+        code: "CHC-2075",
+        name: "Examination Table Gynec",
+        specs: "CRCA tube frame, lithotomic bars & belts. 1830×610×810mm",
+        image: "/furniture/sc-2075.png",
+      },
+    ],
+  },
+  {
+    title: "Seating & Mobility",
+    products: [
+      {
+        code: "CHC-2080",
+        name: "Tandem Waiting Chair (Airport / Metro Type)",
+        specs: "3-seater, chrome plated or powder coated. 1830×500×400mm",
+        image: "/furniture/sc-2080.png",
+      },
+      {
+        code: "CHC-2081",
+        name: "Waiting Chair – Powder Coated",
+        specs: "CRCA steel, available 1–5 seaters. 1450×480×460mm (3-seater)",
+        image: "/furniture/sc-2081.png",
+      },
+      {
+        code: "CHC-2082",
+        name: "Surgeon's Stool",
+        specs: "Cushioned with/without backrest, pneumatic height. 480–610mm",
+        image: "/furniture/sc-2082.png",
+      },
+      {
+        code: "CHC-2083",
+        name: "Revolving Stool",
+        specs: "CRCA tubular, SS press bend top, height adjustable. 530–690mm",
+        image: "/furniture/sc-2083.png",
+      },
+      {
+        code: "CHC-2084",
+        name: "All Purpose Stool",
+        specs: "CRCA tubular framework, press bend top. 305×305×460mm",
+        image: "/furniture/sc-2084.png",
+      },
+      {
+        code: "CHC-2085",
+        name: "Step Stool (Double)",
+        specs: "Epoxy powder coated CRCA, aluminum grip plates. 480×410×460mm",
+        image: "/furniture/sc-2085.jpg",
+      },
+      {
+        code: "CHC-2086",
+        name: "Step Stool (Single)",
+        specs: "Epoxy powder coated CRCA with aluminum grip. 410×250×250mm",
+        image: "/furniture/sc-2086.png",
+      },
+      {
+        code: "CHC-2093",
+        name: "Wheel Chair – Fixed Type",
+        specs: "CRCA framework, cushion & armrest. 630×1090×960mm",
+        image: "/furniture/sc-2093.png",
+      },
+      {
+        code: "CHC-2094",
+        name: "Folding Wheel Chair",
+        specs: "Powder coated CRCA, foldable. 680×1040×890mm",
+        image: "/furniture/sc-2094.png",
+      },
+    ],
+  },
+  {
+    title: "Ward & Utility Equipment",
+    products: [
+      {
+        code: "CHC-2087",
+        name: "Burn Cage",
+        specs: "Epoxy powder coated CRCA tubular structure. 1200×600×600mm",
+        image: "/furniture/sc-2087.png",
+      },
+      {
+        code: "CHC-2088",
+        name: "Kick Bucket",
+        specs: "SS bowl 350mm dia, CRCA tubular structure. 280mm H × 350mm dia",
+        image: "/furniture/sc-2088.png",
+      },
+      {
+        code: "CHC-2089",
+        name: "Linen Trolley",
+        specs: "Complete SS or powder coated, 100mm diameter wheels. 540mm dia × 920mm H",
+        image: "/furniture/sc-2089.png",
+      },
+      {
+        code: "CHC-2090",
+        name: "Saline Stands",
+        specs: "CRCA tubular, fixed 1270mm / adjustable up to 1930mm",
+        image: "/furniture/sc-2090.png",
+      },
+      {
+        code: "CHC-2091",
+        name: "Bed Side Screen with ICU Curtains",
+        specs: "CRCA frame, ICU curtains, 50mm wheels. 1220×560×1620mm",
+        image: "/furniture/sc-2091.jpg",
+      },
+    ],
+  },
+  {
+    title: "OT Tables",
+    products: [
+      {
+        code: "CHC-3018",
+        name: "OT Table Electric (with Manual Override)",
+        specs: "Trendelenburg ±25°, lateral ±20°, 5-section translucent top. 1990×575mm",
+        image: "/furniture/sc-3018.png",
+      },
+      {
+        code: "CHC-3020",
+        name: "Slide Tilt Electric Operation Table",
+        specs: "Sliding top 250mm, trendelenburg 22°, 150kg capacity. 2020×530mm",
+        image: "/furniture/sc-3020.jpg",
+      },
+      {
+        code: "CHC-3021",
+        name: "Hydraulic OT Table (with Ortho Attachment)",
+        specs: "Pelvic rest, inner thigh support, tibia attachment. 1950×680mm",
+        image: "/furniture/sc-3021.png",
+      },
+      {
+        code: "CHC-3022",
+        name: "Hydraulic Operation Table (Deluxe)",
+        specs: "Anesthetic screen, lithotomic leg holder. 1950×580mm",
+        image: "/furniture/sc-3022.png",
+      },
+      {
+        code: "CHC-3023",
+        name: "Height Adjustable Operation Table",
+        specs: "Full SS, removable/folding foot end, lithotomic bars. 1830×540mm",
+        image: "/furniture/sc-3023.png",
+      },
+      {
+        code: "CHC-3024",
+        name: "LDR Table",
+        specs: "Labour, Delivery & Recovery. Backrest 80°, 180kg capacity. 2090×1000mm",
+        image: "/furniture/sc-3024.jpg",
+      },
+      {
+        code: "CHC-3025",
+        name: "Labour Table (Foot End Folding)",
+        specs: "Full SS, 3-section top, perinal U-cut with drainage. 1830×710×760mm",
+        image: "/furniture/sc-3025.png",
+      },
+      {
+        code: "CHC-3026",
+        name: "Telescopic Labour Table",
+        specs: "SS top, backrest on ratchet, perinal U-cut. 1900×840×760mm",
+        image: "/furniture/sc-3026.png",
+      },
+    ],
+  },
+  {
+    title: "OT & Examination Lighting",
+    products: [
+      {
+        code: "CHC-3030",
+        name: "LED OT Light (3 Petal)",
+        specs: "90,000 Lux, 57 LEDs, CRI >96, 3500–6200K. Dome 580mm",
+        image: "/furniture/sc-3030.png",
+      },
+      {
+        code: "CHC-3031",
+        name: "LED OT Light (4+3 Petal)",
+        specs: "120,000 Lux, 76 LEDs, CRI >96. Dome 580mm",
+        image: "/furniture/sc-3031.png",
+      },
+      {
+        code: "CHC-3040",
+        name: "Mobile LED Examination Light",
+        specs: "Single LED, SS base with wheels, 6000K. Height 1.1–1.2m",
+        image: "/furniture/sc-3040.png",
+      },
+      {
+        code: "CHC-3041",
+        name: "Multiple LED with Magnifying Lens",
+        specs: "Acrylic lens, 2200 LM, 5° beam. 2800–6500K",
+        image: "/furniture/sc-3041.png",
+      },
+    ],
+  },
+  {
+    title: "Sterilization, Fumigation & Suction",
+    products: [
+      {
+        code: "CHC-3005",
+        name: "Fumigator (5 Lit)",
+        specs: "SS unit, 1 Hp motor, 5-litre capacity, with/without timer",
+        image: "/furniture/sc-3005.png",
+      },
+      {
+        code: "CHC-3006",
+        name: "Fumigation Machine (1 Hour Timer)",
+        specs: "Compatible with Ecoshield / Bacillocid / Silvimax. Built-in 1-hour timer",
+        image: "/furniture/sc-3006.png",
+      },
+      {
+        code: "CHC-3007A",
+        name: "Fogging Machine (SS)",
+        specs: "SS 304 body, 6-litre tank, 1–3 Ltr/hr flow, digital timer",
+        image: "/furniture/sc-3007a.jpg",
+      },
+      {
+        code: "CHC-3007B",
+        name: "Fogging Machine (Plastic)",
+        specs: "Plastic body, 6-litre tank, 1–3 Ltr/hr flow, digital timer",
+        image: "/furniture/sc-3007b.png",
+      },
+      {
+        code: "CHC-3014",
+        name: "Autoclave (Single Drum)",
+        specs: "SS 304, pressure gauge & release valve, 1 kW heating coil",
+        image: "/furniture/sc-3014.png",
+      },
+      {
+        code: "CHC-3015",
+        name: "Autoclave (Double, 2.5 Drums)",
+        specs: "SS 304, 2 kW heating, 2.5 drum capacity",
+        image: "/furniture/sc-3015.png",
+      },
+      {
+        code: "CHC-3016",
+        name: "Autoclave (Double Chamber)",
+        specs: "Microcontroller automatic, double-walled SS, digital temp display",
+        image: "/furniture/sc-3016.png",
+      },
+      {
+        code: "CHC-3008",
+        name: "Foot Suction",
+        specs: "Foot-operated aluminum pump, vacuum gauge. 310×240mm",
+        image: "/furniture/sc-3008.png",
+      },
+      {
+        code: "CHC-3009",
+        name: "Suction Machine Compact Pro",
+        specs: "20 lpm, 550 mmHg, 0.25 hp oil-free pump, 220V AC",
+        image: "/furniture/sc-3009.jpg",
+      },
+      {
+        code: "CHC-3010",
+        name: "Suction Machine Power Vac",
+        specs: "30 lpm, 650 mmHg, 0.5 hp oil-free pump, 220V AC",
+        image: "/furniture/sc-3010.jpg",
+      },
+      {
+        code: "CHC-3011",
+        name: "Suction Machine Flo Plus",
+        specs: "80 IPM, 735 mmHg, 1 hp oil-free pump, 8000ml capacity",
+        image: "/furniture/sc-3011.jpg",
+      },
+    ],
+  },
+  {
+    title: "Scrub Stations & CSSD",
+    products: [
+      {
+        code: "CHC-3012",
+        name: "O.T. Scrub Station",
+        specs: "Single/double elbow taps, foot operated, SS 304",
+        image: "/furniture/sc-3012.png",
+      },
+      {
+        code: "CHC-3013",
+        name: "OT Scrub Sink for Instruments",
+        specs: "SS 304 press bend, wall/stand mount. 760×440×910mm",
+        image: "/furniture/sc-3013.jpg",
+      },
+      {
+        code: "CHC-3051",
+        name: "CSSD Racks (SS304)",
+        specs: "SS 304 Grade racks, multiple sizes available",
+        image: "/furniture/sc-3051.png",
+      },
+      {
+        code: "CHC-3052",
+        name: "Packing Rack",
+        specs: "Heavy duty with overhead shelves. 1220×915×760mm",
+        image: "/furniture/sc-3052.jpg",
+      },
+      {
+        code: "CHC-3053",
+        name: "OT Sink for Instruments",
+        specs: "SS sink for instrument cleaning, 3-unit or 2-unit options",
+        image: "/furniture/sc-3053.jpg",
+      },
+    ],
+  },
+  {
+    title: "Specialty Chairs & Anesthesia",
+    products: [
+      {
+        code: "CHC-3045",
+        name: "Dermatology Chair",
+        specs: "Fully automatic 3-function motorized, synthetic leather. 1980×600mm",
+        image: "/furniture/sc-3045.png",
+      },
+      {
+        code: "CHC-3046",
+        name: "Electric Dialysis / Blood Collection Chair",
+        specs: "Fully automatic 3-function motorized. 1980×815mm",
+        image: "/furniture/sc-3046.jpg",
+      },
+      {
+        code: "CHC-3054",
+        name: "Anesthesia Machine",
+        specs: "Compact/Major I & II. Rota meter, Goldman vaporizer, Magill circuit",
+        image: "/furniture/sc-3054.png",
+      },
+    ],
+  },
+];
+
+export const furnitureProductCount = furnitureGroups.reduce(
+  (total, group) => total + group.products.length,
+  0
+);
