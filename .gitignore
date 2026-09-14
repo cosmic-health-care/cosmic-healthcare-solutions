@@ -42,6 +42,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local-only project notes (solo project, no need to push planning docs)
+/PROJECT-PLAN.md
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
