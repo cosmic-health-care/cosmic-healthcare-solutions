@@ -45,6 +45,7 @@ yarn-error.log*
 # local-only project notes (solo project, no need to push planning docs)
 /PROJECT-PLAN.md
 /CLAUDE.md
+/AGENTS.md
 
 # typescript
 *.tsbuildinfo
