@@ -1,39 +1,86 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Award, ShieldCheck, Target } from "lucide-react";
+import {
+  ArrowRight,
+  Building,
+  Building2,
+  ClipboardList,
+  Cpu,
+  Eye,
+  FileCheck2,
+  Gauge,
+  GraduationCap,
+  Hammer,
+  HeartPulse,
+  Quote,
+  ShoppingCart,
+  Sparkles,
+  Target,
+  Wrench,
+} from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "cn";
-import { siteConfig } from "@/data/site";
+import { teamMembers } from "@/data/team";
+import { TeamMemberCard } from "@/components/about/team-member-card";
+import { Reveal, RevealItem, StaggerGroup } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
-    "Cosmic HealthCare Solutions is led by Basavaraj Angadi, a Bio Medical Engineer, providing hospital equipment supply, asset management, and calibration services from Kalaburagi, Karnataka.",
+    "Cosmic HealthCare Solutions is a Kalaburagi-based healthcare technology and medical equipment solutions company founded by Basavaraj Angadi, Biomedical Engineer, serving hospitals across Kalyana Karnataka since 2019.",
   alternates: { canonical: "/about" },
 };
 
-const values = [
+const expertise = [
+  { icon: Building2, title: "Hospital Medical Equipment Projects" },
+  { icon: Cpu, title: "Biomedical Engineering Department Support" },
+  { icon: ShoppingCart, title: "Medical Equipment Procurement & Consultancy" },
+  { icon: Wrench, title: "Installation & Commissioning" },
+  { icon: Hammer, title: "Preventive & Breakdown Maintenance" },
+  { icon: FileCheck2, title: "AMC / CMC Management" },
+  { icon: Gauge, title: "Calibration & Equipment Management" },
+  { icon: ClipboardList, title: "Biomedical Documentation & Asset Tracking" },
+  { icon: GraduationCap, title: "User Training & Technical Support" },
+  { icon: Building, title: "New Hospital Setup & Equipment Planning" },
+  { icon: HeartPulse, title: "ICU, OT, NICU & General Hospital Equipment Solutions" },
+];
+
+const equipmentCovered = [
+  "Anesthesia Workstations",
+  "ICU Ventilators",
+  "Cardiac Monitors",
+  "ECG Machines",
+  "Defibrillators",
+  "Syringe & Infusion Pumps",
+  "CPAP / BiPAP",
+  "Oxygen Concentrators",
+  "Suction Units",
+  "Phototherapy Units",
+  "Baby Warmers",
+  "OT Tables",
+  "OT Lights",
+  "Cautery Machines",
+  "X-Ray & C-Arm Systems",
+];
+
+const visionMission = [
+  {
+    icon: Eye,
+    title: "Our Vision",
+    description:
+      "To become a trusted healthcare technology partner for hospitals by providing reliable medical equipment, professional biomedical engineering services, and complete hospital project solutions.",
+  },
   {
     icon: Target,
-    title: "Our mission",
+    title: "Our Mission",
     description:
-      "To be the single reliable partner hospitals and clinics turn to for equipment supply and lifecycle support — from first purchase through daily maintenance.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Compliance-first approach",
-    description:
-      "Every recommendation and service we deliver is guided by NABH and JCI accreditation norms, so your facility stays audit-ready.",
-  },
-  {
-    icon: Award,
-    title: "Engineering-led, not just sales-led",
-    description:
-      "Decisions are backed by real biomedical engineering knowledge — the right equipment, correctly maintained, not just the next sale.",
+      "To improve healthcare infrastructure through quality equipment, technical expertise, timely service, transparent consultancy, and long-term customer support.",
   },
 ];
 
 export default function AboutPage() {
+  const founder = teamMembers.find((member) => member.slug === "basavaraj-angadi");
+
   return (
     <>
       <section className="bg-brand-gradient text-white">
@@ -41,87 +88,133 @@ export default function AboutPage() {
           <span className="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-medium tracking-wide text-white/90">
             About Us
           </span>
-          <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">
-            A biomedical engineer&apos;s approach to hospital equipment
-          </h1>
+          <h1 className="mt-4 text-4xl font-extrabold sm:text-5xl">Cosmic HealthCare Solutions</h1>
           <p className="mt-4 max-w-2xl text-lg text-white/85">
-            Cosmic HealthCare Solutions was founded to give hospitals and
-            clinics a single, technically grounded partner for equipment
-            supply, maintenance, and lifecycle management.
+            A healthcare technology and medical equipment solutions company based in Kalaburagi,
+            Karnataka, founded and led by Mr. Basavaraj Angadi, Biomedical Engineer.
+          </p>
+          <p className="mt-3 max-w-2xl text-sm text-white/70 sm:text-[15px]">
+            Since 2019, delivering medical equipment consultancy, installation, calibration, and
+            technical service solutions to hospitals across Kalyana Karnataka — with 12+ years of
+            biomedical engineering expertise and support for NQAS, KAYAKALPA, NABH, and JCI
+            compliance.
           </p>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-3">
-          <div className="lg:col-span-2">
-            <h2 className="text-2xl font-bold sm:text-3xl">Our story</h2>
-            <div className="mt-4 space-y-4 text-muted-foreground">
-              <p>
-                Cosmic HealthCare Solutions is a Kalaburagi-based medical
-                equipment distribution and services company, founded by{" "}
-                <strong className="text-foreground">{siteConfig.founder.name}</strong>,
-                a {siteConfig.founder.title.toLowerCase()}. That biomedical
-                engineering background shapes how we operate: equipment
-                recommendations are grounded in technical fit, not just
-                catalog pricing, and our service contracts are built around
-                real maintenance and compliance needs.
-              </p>
-              <p>
-                We work with hospitals, nursing homes, diagnostic centers, and
-                clinics — supplying hospital equipment, surgical supplies, and
-                pharma products, and supporting them afterward with asset
-                management, AMC/CMC contracts, calibration services, and
-                equipment rental.
-              </p>
-              <p>
-                Rather than manufacturing equipment ourselves, we operate a
-                vetted network of manufacturers and distributors across
-                anesthesia and OT equipment, surgical consumables, and
-                hospital furniture — so your facility gets a wide catalog
-                through a single point of contact.
-              </p>
-            </div>
+      <section className="border-y border-border bg-secondary/40 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <Reveal className="max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+              Our Expertise
+            </span>
+            <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
+              End-to-end support for hospitals and healthcare institutions
+            </h2>
+          </Reveal>
 
-            <div className="mt-10 rounded-2xl border border-border bg-card p-6">
-              <h3 className="font-heading text-lg font-semibold">
-                {siteConfig.founder.name}
-              </h3>
-              <p className="text-sm text-primary">{siteConfig.founder.title}</p>
-              <p className="mt-3 text-sm text-muted-foreground">
-                Operational expertise in asset management, calibration
-                services, and equipment procurement as per NABH &amp; JCI
-                norms.
-              </p>
-            </div>
-          </div>
-
-          <div className="space-y-6">
-            {values.map((value) => (
-              <div key={value.title} className="rounded-2xl border border-border bg-card p-6">
-                <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                  <value.icon className="size-5" />
-                </div>
-                <h3 className="mt-4 font-heading text-base font-semibold">{value.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{value.description}</p>
-              </div>
+          <StaggerGroup className="mt-10 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {expertise.map((item) => (
+              <RevealItem
+                key={item.title}
+                className="flex items-center gap-3 rounded-xl border border-border bg-card p-4"
+              >
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-primary">
+                  <item.icon className="size-5" />
+                </span>
+                <span className="text-sm font-medium">{item.title}</span>
+              </RevealItem>
             ))}
-          </div>
+          </StaggerGroup>
+
+          <Reveal className="mt-10 rounded-2xl border border-border bg-card p-6">
+            <h3 className="font-heading text-base font-semibold">
+              Technical expertise across critical hospital equipment
+            </h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {equipmentCovered.map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-border bg-background px-3 py-1.5 text-xs font-medium text-foreground"
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+        <Reveal className="max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Meet the Team
+          </span>
+          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">The people behind Cosmic</h2>
+        </Reveal>
+
+        <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
+          {teamMembers.map((member, index) => (
+            <TeamMemberCard key={member.slug} member={member} delay={index * 0.08} />
+          ))}
         </div>
 
-        <div className="mt-16 flex flex-wrap items-center justify-between gap-6 rounded-2xl bg-secondary/50 p-8">
-          <div>
-            <h3 className="font-heading text-xl font-semibold">
+        {founder?.quote && (
+          <Reveal className="relative mt-10 overflow-hidden rounded-2xl bg-brand-gradient px-6 py-10 text-center text-white sm:px-12">
+            <Quote className="mx-auto size-8 text-white/70" />
+            <p className="mx-auto mt-4 max-w-2xl text-lg font-medium sm:text-xl">
+              &ldquo;{founder.quote}&rdquo;
+            </p>
+            <p className="mt-4 text-sm text-white/80">
+              — {founder.name}, {founder.role}
+            </p>
+          </Reveal>
+        )}
+      </section>
+
+      <section className="border-y border-border bg-secondary/40 py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <StaggerGroup className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            {visionMission.map((item) => (
+              <RevealItem key={item.title} className="rounded-2xl border border-border bg-card p-7">
+                <span className="flex size-12 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green-dark">
+                  <item.icon className="size-6" />
+                </span>
+                <h3 className="mt-4 font-heading text-xl font-semibold">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.description}
+                </p>
+              </RevealItem>
+            ))}
+          </StaggerGroup>
+
+          <Reveal className="mt-6 flex items-center gap-2 rounded-xl border border-border bg-card px-5 py-3 text-sm font-medium text-muted-foreground">
+            <Sparkles className="size-4 shrink-0 text-primary" />
+            Cosmic HealthCare Solutions — Your Trusted Partner in Hospital Medical Equipment &amp;
+            Biomedical Engineering Solutions.
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <Reveal className="relative overflow-hidden rounded-2xl border border-border bg-secondary/40 px-6 py-14 text-center sm:px-12">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 opacity-60 [background-image:radial-gradient(circle_at_1px_1px,var(--border)_1px,transparent_0)] [background-size:26px_26px]"
+          />
+          <div className="relative">
+            <h3 className="font-heading text-2xl font-bold sm:text-3xl">
               Want to know more about how we work?
             </h3>
-            <p className="mt-1 text-sm text-muted-foreground">
+            <p className="mx-auto mt-2 max-w-md text-sm text-muted-foreground">
               Reach out and we&apos;ll walk you through our services in detail.
             </p>
+            <Link href="/contact" className={cn(buttonVariants({ size: "lg" }), "mt-6")}>
+              Contact Us
+              <ArrowRight className="size-4" />
+            </Link>
           </div>
-          <Link href="/contact" className={cn(buttonVariants({ size: "lg" }))}>
-            Contact Us
-          </Link>
-        </div>
+        </Reveal>
       </section>
     </>
   );
