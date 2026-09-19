@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, ShieldCheck, Wrench, Truck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "cn";
 import { whatsappLink } from "@/data/site";
 import { WhatsAppIcon } from "@/components/shared/whatsapp-icon";
+import { HeroMarquee } from "@/components/sections/hero-marquee";
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -24,12 +25,6 @@ const stats = [
   { label: "Service model", value: "Sales · Service · Rental" },
   { label: "Compliance focus", value: "NABH & JCI norms" },
   { label: "Based in", value: "Kalaburagi, Karnataka" },
-];
-
-const pillars = [
-  { icon: Truck, title: "Supply", desc: "Equipment, surgical supplies & pharma products" },
-  { icon: Wrench, title: "Service", desc: "AMC/CMC contracts & NABH/JCI-norm calibration" },
-  { icon: ShieldCheck, title: "Rental", desc: "Critical care & sleep study equipment on demand" },
 ];
 
 export function Hero() {
@@ -53,7 +48,7 @@ export function Hero() {
       />
 
       <motion.div
-        className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8"
+        className="relative mx-auto max-w-7xl px-4 pt-20 pb-12 sm:px-6 sm:pt-28 sm:pb-14 lg:px-8"
         variants={container}
         initial="hidden"
         animate="show"
@@ -113,24 +108,10 @@ export function Hero() {
             ))}
           </motion.dl>
         </div>
+      </motion.div>
 
-        <motion.div
-          variants={container}
-          className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-3"
-        >
-          {pillars.map((pillar) => (
-            <motion.div
-              key={pillar.title}
-              variants={item}
-              whileHover={{ y: -6, transition: { type: "spring", stiffness: 300, damping: 20 } }}
-              className="rounded-2xl border border-white/15 bg-white/10 p-5 backdrop-blur-sm"
-            >
-              <pillar.icon className="size-6 text-white" />
-              <p className="mt-3 font-heading text-base font-semibold">{pillar.title}</p>
-              <p className="mt-1 text-sm text-white/75">{pillar.desc}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+      <motion.div variants={item} initial="hidden" animate="show" className="relative pb-16 sm:pb-20">
+        <HeroMarquee />
       </motion.div>
     </section>
   );
