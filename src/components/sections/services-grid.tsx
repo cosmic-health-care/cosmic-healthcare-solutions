@@ -1,46 +1,64 @@
-"use client";
-
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { services, type Service } from "@/data/services";
+import { cn } from "cn";
+import { CheckList } from "@/components/shared/check-list";
+import { Chip } from "@/components/shared/chip";
+import { IconTile } from "@/components/shared/icon-tile";
 import { RevealItem, StaggerGroup } from "@/components/shared/reveal";
+import { services } from "@/data/services";
 
-export function ServicesGrid({
-  items = services,
-  linkLabel = "Learn more",
-}: {
-  items?: Service[];
-  linkLabel?: string;
-}) {
+// These span two columns and show their deliverables beside the text.
+const FEATURED_SLUGS = new Set(["equipment-supply", "calibration"]);
+
+export function ServicesGrid({ linkLabel = "Learn more" }: { linkLabel?: string }) {
   return (
-    <StaggerGroup className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((service) => (
-        <RevealItem
-          key={service.slug}
-          whileHover={{ y: -8 }}
-          transition={{ type: "spring", stiffness: 300, damping: 22 }}
-          className="h-full"
-        >
-          <Link
-            href={`/services/${service.slug}`}
-            className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow duration-300 hover:shadow-xl hover:shadow-primary/5"
+    <StaggerGroup className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map((service) => {
+        const featured = FEATURED_SLUGS.has(service.slug);
+        return (
+          <RevealItem
+            key={service.slug}
+            className={cn(featured ? "sm:col-span-2" : "sm:last:col-span-2 lg:last:col-span-1")}
           >
-            <span
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-1 origin-left scale-x-0 bg-brand-gradient transition-transform duration-300 group-hover:scale-x-100"
-            />
-            <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 ease-out group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-              <service.icon className="size-5" />
-            </div>
-            <h3 className="mt-4 font-heading text-lg font-semibold">{service.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground">{service.shortDescription}</p>
-            <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-primary">
-              {linkLabel}
-              <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
-            </span>
-          </Link>
-        </RevealItem>
-      ))}
+            <Link
+              href={`/services/${service.slug}`}
+              className={cn(
+                "group grid h-full gap-6 rounded-2xl border border-border bg-card p-6 transition-colors hover:border-ring",
+                featured && "md:grid-cols-2"
+              )}
+            >
+              <div className="flex flex-col">
+                <IconTile icon={service.icon} />
+                <h3 className="mt-4 text-xl font-semibold">{service.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {service.shortDescription}
+                </p>
+                {!featured && (
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {service.heroPoints.map((point) => (
+                      <Chip key={point}>{point}</Chip>
+                    ))}
+                  </div>
+                )}
+                <span className="mt-auto inline-flex items-center gap-1 pt-5 text-sm font-medium text-brand">
+                  {linkLabel}
+                  <ArrowUpRight
+                    aria-hidden
+                    className="size-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                  />
+                </span>
+              </div>
+
+              {featured && (
+                <div className="rounded-xl border border-border bg-inset p-4">
+                  <p className="font-mono text-xs text-subtle-foreground">What you get</p>
+                  <CheckList items={service.deliverables} className="mt-3" />
+                </div>
+              )}
+            </Link>
+          </RevealItem>
+        );
+      })}
     </StaggerGroup>
   );
 }

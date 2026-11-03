@@ -2,6 +2,8 @@ export const siteConfig = {
   name: "Cosmic HealthCare Solutions",
   shortName: "Cosmic HealthCare",
   tagline: "Sales · Service · Rental",
+  // Browser UI colour. Metadata cannot read CSS variables: keep equal to `.theme-deep --background`.
+  themeColor: "#2b5ea0",
   description:
     "Cosmic HealthCare Solutions is a Kalaburagi-based medical equipment distributor supplying hospital equipment, surgical supplies, and pharma products, with asset management, AMC/CMC contracts, calibration, and rental services.",
   url: "https://cosmichealthcaresolutions.com",

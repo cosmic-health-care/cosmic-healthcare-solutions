@@ -78,6 +78,7 @@ export const productCategories: ProductCategory[] = [
       "Medical gas pipeline systems — regulators, flowmeters, outlets & alarms",
       "Modular OT suites, surgical tables & OT LED lighting",
       "Humidifier bottles, suction & disposable supplies",
+      "Anaesthesia workstations",
     ],
   },
   {
@@ -91,6 +92,8 @@ export const productCategories: ProductCategory[] = [
       "ECG cables & EKG accessories",
       "NIBP cuffs & oxygen sensors",
       "Bulbs, batteries, components & consumables",
+      "All-brand medical equipment batteries",
+      "Mindray, GE & Philips PCB, power supply & ventilator spare parts",
     ],
   },
   {

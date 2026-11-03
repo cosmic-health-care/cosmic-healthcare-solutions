@@ -4,46 +4,156 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Cosmic HealthCare theme: slate-white pages with bands of one flat blue (#2b5ea0).
+ * Rules for this file and everything built on it:
+ *   - Flat colours only. No gradients or glows, on buttons or anywhere else.
+ *   - Every colour is defined here. Components use the semantic tokens, never
+ *     hex values or palette classes, so the whole site re-themes from this file.
+ *   - `.theme-deep` re-points the same tokens for blue bands, and `.theme-light`
+ *     restores them for white panels placed on a band, so a component works on
+ *     either without knowing which one it sits on.
+ */
+:root {
+  --radius: 0.625rem;
+  --header-height: 4.75rem;
+}
+
+:root,
+.theme-light {
+  color-scheme: light;
+
+  /* Surfaces, from the page outwards */
+  --background: #f8fafc;
+  --surface: #f1f5f9; /* alternate page sections */
+  --inset: #f1f5f9; /* wells inside cards */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --tile: #ffffff; /* behind logos and product photos, on every surface */
+
+  /* Text */
+  --foreground: #0f172a;
+  --muted-foreground: #475569;
+  --subtle-foreground: #56657a;
+
+  /* Accent: --primary for fills, --brand for text and icons */
+  --primary: #2b5ea0;
+  --primary-hover: #244f88;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e1ebf7;
+  --brand: #2b5ea0;
+
+  /* Neutral fills */
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --accent: #e1ebf7;
+  --accent-foreground: #244f88;
+
+  /* Lines */
+  --border: #e2e8f0;
+  --input: #cbd5e1;
+  --ring: #2b5ea0;
+
+  /* Status */
+  --success: #244f88;
+  --success-soft: #d8e3f1;
+  --warning: #7d4a06;
+  --warning-soft: #fbe8c9;
+  --destructive: #ad2f24;
+
+  /* WhatsApp actions */
+  --whatsapp: #1f7a56;
+  --whatsapp-hover: #1a684a;
+  --whatsapp-foreground: #ffffff;
+
+  /* Elevation and dimming */
+  --shadow: #0f172a33;
+  --overlay: #0f172a80;
+
+  color: var(--foreground);
+}
+
+/* Blue bands: hero, page headers, feature sections, CTA, footer. */
+.theme-deep {
+  color-scheme: dark;
+
+  --background: #2b5ea0;
+  --surface: #244f88;
+  --inset: #1f4677;
+  --card: #244f88;
+  --card-foreground: #ffffff;
+
+  --foreground: #ffffff;
+  --muted-foreground: #eaf1fa;
+  --subtle-foreground: #dbe6f4;
+
+  --primary: #ffffff;
+  --primary-hover: #f1f5f9;
+  --primary-foreground: #2b5ea0;
+  --primary-soft: #1f4677;
+  --brand: #cfe0f5;
+
+  --secondary: #244f88;
+  --secondary-foreground: #ffffff;
+  --muted: #244f88;
+  --accent: #244f88;
+  --accent-foreground: #ffffff;
+
+  --border: #5f86ba;
+  --input: #b4cae6;
+  --ring: #ffffff;
+
+  --success: #e1ebf7;
+  --success-soft: #1f4677;
+  --warning: #ffe3b0;
+  --warning-soft: #1f4677;
+
+  color: var(--foreground);
+}
+
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
   --font-heading: var(--font-heading);
-  --color-brand-blue: var(--brand-blue);
-  --color-brand-blue-dark: var(--brand-blue-dark);
-  --color-brand-green: var(--brand-green);
-  --color-brand-green-dark: var(--brand-green-dark);
-  --color-brand-orange: var(--brand-orange);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-inset: var(--inset);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-tile: var(--tile);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-subtle-foreground: var(--subtle-foreground);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-brand: var(--brand);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-destructive: var(--destructive);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-hover: var(--whatsapp-hover);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-shadow: var(--shadow);
+  --color-overlay: var(--overlay);
+
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -51,91 +161,20 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
-}
 
-:root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.18 0.02 260);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.18 0.02 260);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.18 0.02 260);
-  --primary: oklch(0.488 0.243 264.376);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0.012 260);
-  --secondary-foreground: oklch(0.27 0.05 260);
-  --muted: oklch(0.97 0.008 260);
-  --muted-foreground: oklch(0.5 0.02 260);
-  --accent: oklch(0.696 0.17 162.48);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.01 260);
-  --input: oklch(0.92 0.01 260);
-  --ring: oklch(0.546 0.245 262.881);
-  --chart-1: oklch(0.546 0.245 262.881);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.705 0.213 47.604);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.75rem;
-  --brand-blue: oklch(0.546 0.245 262.881);
-  --brand-blue-dark: oklch(0.398 0.195 265);
-  --brand-green: oklch(0.696 0.17 162.48);
-  --brand-green-dark: oklch(0.596 0.145 163.225);
-  --brand-orange: oklch(0.705 0.213 47.604);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
-}
-
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --animate-rise: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-bob: bob 6s ease-in-out infinite;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
-  body {
-    @apply bg-background text-foreground;
-  }
   html {
     @apply font-sans;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
   h1,
   h2,
@@ -147,19 +186,56 @@
   }
 }
 
-@utility bg-brand-gradient {
-  background-image: linear-gradient(
-    135deg,
-    var(--brand-blue-dark) 0%,
-    var(--brand-blue) 55%,
-    var(--brand-green) 100%
-  );
+/* Shared page width. */
+@utility page-container {
+  @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
 }
 
-@utility text-gradient-brand {
-  background-image: linear-gradient(90deg, var(--brand-blue), var(--brand-green));
-  background-clip: text;
-  color: transparent;
+/* Runs a band up behind the floating header. */
+@utility header-underlap {
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
+}
+
+/* Vertical rhythm of a full-width page section. */
+@utility page-section {
+  @apply py-16 md:py-24;
+}
+
+/* Small mono label above headings. */
+@utility eyebrow {
+  @apply font-mono text-xs font-medium tracking-[0.14em] text-brand uppercase;
+}
+
+/* Photo on the light tile: multiply removes the white box of JPEG product shots. */
+@utility product-image {
+  @apply object-contain mix-blend-multiply;
+}
+
+/* Photo in the hero background. Faded so hero text keeps its contrast on top of it. */
+@utility hero-marquee-image {
+  @apply object-contain opacity-20;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
 }
 
 @keyframes marquee-left {
@@ -171,19 +247,14 @@
   }
 }
 
-@keyframes marquee-right {
-  from {
-    transform: translateX(-50%);
-  }
-  to {
-    transform: translateX(0);
-  }
-}
-
 @utility animate-marquee-left {
   animation: marquee-left var(--marquee-duration, 40s) linear infinite;
 }
 
-@utility animate-marquee-right {
-  animation: marquee-right var(--marquee-duration, 40s) linear infinite;
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise,
+  .animate-bob,
+  .animate-marquee-left {
+    animation: none;
+  }
 }

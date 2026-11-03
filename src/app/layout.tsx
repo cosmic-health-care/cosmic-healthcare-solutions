@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
-import { Inter, Manrope, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -7,23 +7,33 @@ import { FloatingWhatsApp } from "@/components/shared/floating-whatsapp";
 import { MotionProvider } from "@/components/shared/motion-provider";
 import { siteConfig } from "@/data/site";
 
-const inter = Inter({
+// Bundled in the repo so dev and CI builds never depend on reaching Google Fonts.
+const plexSans = localFont({
+  src: "./fonts/ibm-plex-sans-variable.woff2",
   variable: "--font-sans",
-  subsets: ["latin"],
+  weight: "100 700",
   display: "swap",
 });
 
-const manrope = Manrope({
+const bricolage = localFont({
+  src: "./fonts/bricolage-grotesque-variable.woff2",
   variable: "--font-heading",
-  subsets: ["latin"],
+  weight: "200 800",
   display: "swap",
 });
 
-const geistMono = Geist_Mono({
+const plexMono = localFont({
+  src: [
+    { path: "./fonts/ibm-plex-mono-400.woff2", weight: "400" },
+    { path: "./fonts/ibm-plex-mono-500.woff2", weight: "500" },
+  ],
   variable: "--font-mono",
-  subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: siteConfig.themeColor,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -87,7 +97,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${manrope.variable} ${geistMono.variable} h-full scroll-smooth antialiased`}
+      // Lets Next.js disable smooth scrolling during route transitions (scroll-smooth below).
+      data-scroll-behavior="smooth"
+      className={`${plexSans.variable} ${bricolage.variable} ${plexMono.variable} h-full scroll-smooth antialiased`}
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <script

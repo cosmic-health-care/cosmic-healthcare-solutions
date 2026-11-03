@@ -55,9 +55,9 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center rounded-2xl border border-border bg-card p-10 text-center">
-        <CheckCircle2 className="size-10 text-brand-green-dark" />
-        <h3 className="mt-4 font-heading text-lg font-semibold">Thanks for reaching out</h3>
+      <div className="flex h-full flex-col items-center justify-center rounded-2xl border border-border bg-card p-10 text-center">
+        <CheckCircle2 className="size-10 text-success" />
+        <h3 className="mt-4 text-xl font-semibold">Thanks for reaching out</h3>
         <p className="mt-2 max-w-sm text-sm text-muted-foreground">
           We&apos;ve received your enquiry and will get back to you shortly.
         </p>

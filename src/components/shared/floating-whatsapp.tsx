@@ -8,9 +8,9 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on WhatsApp"
-      className="fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-brand-green-dark text-white shadow-lg shadow-brand-green-dark/30 transition-transform hover:scale-105"
+      className="fixed right-5 bottom-5 z-50 flex size-13 items-center justify-center rounded-full bg-whatsapp text-whatsapp-foreground shadow-lg shadow-shadow transition-colors hover:bg-whatsapp-hover"
     >
-      <WhatsAppIcon className="size-7" />
+      <WhatsAppIcon className="size-6" />
     </a>
   );
 }

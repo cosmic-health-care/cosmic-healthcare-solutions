@@ -1,59 +1,92 @@
-import { Award, HeartHandshake, Network, Timer } from "lucide-react";
+import { Award, HeartHandshake, Network, Timer, X } from "lucide-react";
+import { CheckList } from "@/components/shared/check-list";
+import { IconTile } from "@/components/shared/icon-tile";
 import { Reveal, RevealItem, StaggerGroup } from "@/components/shared/reveal";
+import { SectionHeading } from "@/components/shared/section-heading";
+import { PartnerNetwork } from "@/components/sections/partner-network";
+
+const withoutPartner = [
+  "A different vendor for equipment, consumables and service",
+  "Warranty and service history spread across files",
+  "Calibration due dates tracked by hand",
+];
+
+const withPartner = [
+  "One contact from sourcing to commissioning",
+  "Audit-ready records for NABH and JCI",
+  "Scheduled calibration and preventive visits",
+];
 
 const reasons = [
   {
     icon: Award,
     title: "Biomedical engineering expertise",
     description:
-      "Led by a qualified Bio Medical Engineer, so procurement and maintenance decisions are grounded in real technical understanding, not just sales.",
+      "Led by a qualified Bio Medical Engineer, so decisions rest on technical understanding, not just sales.",
   },
   {
     icon: Network,
     title: "A vetted partner network",
     description:
-      "We source equipment, spares, and furniture through a network of quality-assured manufacturers and distributors, so you get breadth without managing multiple vendors.",
+      "Quality-assured manufacturers and distributors give you breadth without managing multiple vendors.",
   },
   {
     icon: Timer,
     title: "Uptime you can plan around",
     description:
-      "AMC/CMC contracts and scheduled calibration keep critical equipment audit-ready and minimize unplanned downtime.",
+      "AMC/CMC contracts and scheduled calibration keep critical equipment audit-ready.",
   },
   {
     icon: HeartHandshake,
     title: "One team, full lifecycle",
     description:
-      "Sales, service, and rental are handled by the same team — support doesn't end once equipment is delivered.",
+      "Sales, service and rental sit with the same team, so support continues after delivery.",
   },
 ];
 
 export function WhyChooseUs() {
   return (
-    <section className="bg-secondary/40 py-20">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Why Cosmic HealthCare Solutions
-          </span>
-          <h2 className="mt-2 text-3xl font-bold sm:text-4xl">
-            Built for hospitals that can&apos;t afford downtime
-          </h2>
+    <section className="page-section theme-deep bg-background">
+      <div className="page-container">
+        <Reveal>
+          <SectionHeading
+            eyebrow="Why Cosmic"
+            title="Built for hospitals that can't afford downtime"
+            centered
+          />
         </Reveal>
 
-        <StaggerGroup className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <Reveal className="rounded-2xl border border-border bg-inset p-6">
+            <h3 className="text-lg font-semibold text-muted-foreground">Managing it yourself</h3>
+            <ul className="mt-4 space-y-2.5">
+              {withoutPartner.map((item) => (
+                <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                  <X aria-hidden className="mt-0.5 size-4 shrink-0 text-subtle-foreground" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+          <Reveal className="rounded-2xl border border-ring bg-card p-6">
+            <h3 className="text-lg font-semibold">With Cosmic HealthCare</h3>
+            <CheckList items={withPartner} className="mt-4" />
+          </Reveal>
+        </div>
+
+        <StaggerGroup className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {reasons.map((reason) => (
-            <RevealItem key={reason.title} className="flex gap-4">
-              <div className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-brand-green/15 text-brand-green-dark">
-                <reason.icon className="size-5" />
-              </div>
-              <div>
-                <h3 className="font-heading text-lg font-semibold">{reason.title}</h3>
-                <p className="mt-1.5 text-sm text-muted-foreground">{reason.description}</p>
-              </div>
+            <RevealItem key={reason.title} className="rounded-2xl border border-border bg-card p-6">
+              <IconTile icon={reason.icon} />
+              <h3 className="mt-4 text-lg font-semibold">{reason.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                {reason.description}
+              </p>
             </RevealItem>
           ))}
         </StaggerGroup>
+
+        <PartnerNetwork />
       </div>
     </section>
   );

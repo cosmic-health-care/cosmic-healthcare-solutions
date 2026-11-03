@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import { CtaBanner } from "@/components/sections/cta-banner";
 import { ServicesGrid } from "@/components/sections/services-grid";
+import { PageHero } from "@/components/shared/page-hero";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -10,21 +12,20 @@ export const metadata: Metadata = {
 
 export default function ServicesPage() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="max-w-2xl">
-        <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-          Our Services
-        </span>
-        <h1 className="mt-2 text-4xl font-extrabold sm:text-5xl">
-          Everything your facility needs, one partner
-        </h1>
-        <p className="mt-4 text-muted-foreground">
-          Supply, service, and rental — covering the full lifecycle of your
-          hospital equipment.
-        </p>
-      </div>
+    <>
+      <PageHero
+        eyebrow="Our Services"
+        title="Everything your facility needs, one partner"
+        description="Supply, service, and rental, covering the full lifecycle of your hospital equipment."
+      />
 
-      <ServicesGrid linkLabel="View details" />
-    </section>
+      <section className="border-b border-border bg-surface pb-16 md:pb-24">
+        <div className="page-container pt-4">
+          <ServicesGrid linkLabel="View details" />
+        </div>
+      </section>
+
+      <CtaBanner />
+    </>
   );
 }

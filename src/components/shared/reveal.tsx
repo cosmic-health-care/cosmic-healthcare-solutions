@@ -5,7 +5,7 @@ import { motion, type Variants, type HTMLMotionProps } from "framer-motion";
 const EASE = [0.16, 1, 0.3, 1] as const;
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
+  hidden: { opacity: 0, y: 16 },
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: EASE } },
 };
 
@@ -25,7 +25,7 @@ export function Reveal({ children, delay = 0, ...props }: RevealProps) {
       variants={fadeUp}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.3 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.6, ease: EASE, delay }}
       {...props}
     >
@@ -41,7 +41,7 @@ export function StaggerGroup({ children, ...props }: HTMLMotionProps<"div">) {
       variants={staggerContainer}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.1 }}
       {...props}
     >
       {children}

@@ -1,15 +1,17 @@
-import { Hero } from "@/components/sections/hero";
-import { ServicesOverview } from "@/components/sections/services-overview";
-import { PartnerNetwork } from "@/components/sections/partner-network";
-import { WhyChooseUs } from "@/components/sections/why-choose-us";
 import { CtaBanner } from "@/components/sections/cta-banner";
+import { Hero } from "@/components/sections/hero";
+import { HowItWorks } from "@/components/sections/how-it-works";
+import { ProductLines } from "@/components/sections/product-lines";
+import { ServicesOverview } from "@/components/sections/services-overview";
+import { WhyChooseUs } from "@/components/sections/why-choose-us";
 
 export default function HomePage() {
   return (
     <>
       <Hero />
       <ServicesOverview />
-      <PartnerNetwork />
+      <ProductLines />
+      <HowItWorks />
       <WhyChooseUs />
       <CtaBanner />
     </>

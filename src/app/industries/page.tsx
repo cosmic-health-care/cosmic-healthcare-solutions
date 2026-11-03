@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowRight, Building2, Cross, Stethoscope, TestTube2 } from "lucide-react";
-import { buttonVariants } from "@/components/ui/button";
-import { cn } from "cn";
+import { Building2, Cross, Stethoscope, TestTube2 } from "lucide-react";
+import { CtaBanner } from "@/components/sections/cta-banner";
+import { IconTile } from "@/components/shared/icon-tile";
+import { PageHero } from "@/components/shared/page-hero";
+import { RevealItem, StaggerGroup } from "@/components/shared/reveal";
 
 export const metadata: Metadata = {
   title: "Industries We Serve",
@@ -40,47 +41,37 @@ const industries = [
 
 export default function IndustriesPage() {
   return (
-    <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="max-w-2xl">
-        <span className="text-sm font-semibold uppercase tracking-wide text-primary">
-          Industries We Serve
-        </span>
-        <h1 className="mt-2 text-4xl font-extrabold sm:text-5xl">
-          Built for institutional healthcare buyers
-        </h1>
-        <p className="mt-4 text-muted-foreground">
-          Whichever type of facility you run, we tailor equipment supply and
-          service plans to your scale and compliance needs.
-        </p>
-      </div>
+    <>
+      <PageHero
+        eyebrow="Industries We Serve"
+        title="Built for institutional healthcare buyers"
+        description="Whichever type of facility you run, we tailor equipment supply and service plans to your scale and compliance needs."
+      />
 
-      <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2">
-        {industries.map((industry) => (
-          <div key={industry.title} className="rounded-2xl border border-border bg-card p-6">
-            <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-              <industry.icon className="size-5" />
-            </div>
-            <h2 className="mt-4 font-heading text-lg font-semibold">{industry.title}</h2>
-            <p className="mt-2 text-sm text-muted-foreground">{industry.description}</p>
-          </div>
-        ))}
-      </div>
-
-      <div className="mt-12 flex flex-wrap items-center gap-4 rounded-2xl bg-secondary/50 p-8">
-        <div className="flex-1">
-          <h3 className="font-heading text-xl font-semibold">
-            Not sure which services fit your facility?
-          </h3>
-          <p className="mt-1 text-sm text-muted-foreground">
-            Tell us about your facility and requirements — we&apos;ll suggest
-            a plan.
-          </p>
+      <section className="page-section border-b border-border bg-surface">
+        <div className="page-container">
+          <StaggerGroup className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {industries.map((industry) => (
+              <RevealItem
+                key={industry.title}
+                className="rounded-2xl border border-border bg-card p-6"
+              >
+                <IconTile icon={industry.icon} />
+                <h2 className="mt-4 text-xl font-semibold">{industry.title}</h2>
+                <p className="mt-2 leading-relaxed text-muted-foreground">
+                  {industry.description}
+                </p>
+              </RevealItem>
+            ))}
+          </StaggerGroup>
         </div>
-        <Link href="/contact" className={cn(buttonVariants({ size: "lg" }))}>
-          Talk to Us
-          <ArrowRight className="size-4" />
-        </Link>
-      </div>
-    </section>
+      </section>
+
+      <CtaBanner
+        title="Not sure which services fit your facility?"
+        description="Tell us about your facility and requirements, and we'll suggest a plan."
+        actionLabel="Talk to Us"
+      />
+    </>
   );
 }
